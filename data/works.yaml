@@ -1,0 +1,14 @@
+# 制作物
+- title: 手の動きで操作するゲーム（Unity、個人制作）
+  description: >-
+    カメラで取得した手の動きを入力として操作する、非接触型のインタラクションゲーム。
+    MediaPipeで手のランドマーク（関節位置）をリアルタイムに検出し、
+    その情報をUnityに連携してゲームを操作する。
+  tech: [Unity, "C#", MediaPipe]
+  youtube: xAmO9aADVv8
+  video_note: 研究室のYouTubeチャンネルで公開
+  links:
+    - label: ソースコード（GitHub）
+      url: https://github.com/Shkrtb/SimpleGame-HandsRun
+    - label: YouTubeで見る
+      url: https://www.youtube.com/watch?v=xAmO9aADVv8

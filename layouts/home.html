@@ -1,0 +1,123 @@
+{{ define "main" }}
+{{ $p := hugo.Data.profile }}
+{{ $r := hugo.Data.research }}
+
+<header class="hero">
+  <div class="container">
+    <h1>{{ $p.name }}<span class="name-en">{{ $p.name_en }}</span></h1>
+    <p class="affiliation">
+      {{ range $i, $line := $p.affiliation }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}
+    </p>
+    <ul class="tags" aria-label="研究分野">
+      {{ range $p.fields }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <ul class="hero-links">
+      {{ range $p.links }}
+      <li><span class="link-label">{{ .label }}</span> <a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .text }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  <nav class="site-nav" aria-label="ページ内リンク">
+    <div class="container">
+      <a href="#research">研究</a>
+      <a href="#publications">発表・受賞</a>
+      <a href="#skills">スキル</a>
+      <a href="#works">制作物</a>
+      <a href="#contact">連絡先</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section id="research">
+    <h2>研究</h2>
+    <h3>{{ $r.title }}</h3>
+    <p>{{ $r.summary }}</p>
+    <h4>主な取り組み</h4>
+    <ul>
+      {{ range $r.tasks }}<li>{{ . }}</li>{{ end }}
+    </ul>
+
+    {{/* 図・写真（data/research.yaml の figures に書いたものだけ表示される） */}}
+    {{ with $r.figures }}
+    <div class="figures">
+      {{ range . }}
+      <figure>
+        <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy">
+        {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* 動画（data/research.yaml の videos に書いたものだけ表示される） */}}
+    {{ range $r.videos }}
+    {{ partial "youtube.html" (dict "id" .id "title" .title) }}
+    {{ end }}
+  </section>
+
+  <section id="publications">
+    <h2>発表・受賞</h2>
+    <ul class="pub-list">
+      {{ range hugo.Data.publications }}
+      <li>
+        <p class="pub-title">
+          {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+        </p>
+        <p class="pub-venue">{{ .venue }}{{ with .detail }}　{{ . }}{{ end }}</p>
+        {{ with .awards }}
+        <ul class="awards">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>スキル</h2>
+    <dl class="skills">
+      {{ range hugo.Data.skills }}
+      <div class="skill-row">
+        <dt>{{ .category }}</dt>
+        <dd>{{ delimit .items "、" }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+  </section>
+
+  <section id="works">
+    <h2>制作物</h2>
+    {{ range hugo.Data.works }}
+    {{ $w := . }}
+    <article class="work">
+      <h3>{{ .title }}</h3>
+      <p>{{ .description }}</p>
+      {{ with .tech }}<p class="tech">使用技術：{{ delimit . "、" }}</p>{{ end }}
+      {{ with .youtube }}{{ partial "youtube.html" (dict "id" . "title" $w.title) }}{{ end }}
+      {{ with .video_note }}<p class="note">動画：{{ . }}</p>{{ end }}
+      {{ with .links }}
+      <ul class="work-links">
+        {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></li>{{ end }}
+      </ul>
+      {{ end }}
+    </article>
+    {{ end }}
+  </section>
+
+  <section id="contact">
+    <h2>連絡先・リンク</h2>
+    <dl class="skills">
+      {{ range $p.links }}
+      <div class="skill-row">
+        <dt>{{ .label }}</dt>
+        <dd><a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .text }}</a></dd>
+      </div>
+      {{ end }}
+    </dl>
+  </section>
+
+</main>
+{{ end }}

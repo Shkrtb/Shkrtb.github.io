@@ -1,0 +1,10 @@
+{{/* YouTube 動画の埋め込み。引数: id（動画ID）, title（読み上げ用タイトル） */}}
+<div class="video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{{ .id }}"
+    title="{{ with .title }}{{ . }}{{ else }}YouTube動画{{ end }}"
+    loading="lazy"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen></iframe>
+</div>

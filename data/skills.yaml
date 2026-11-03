@@ -1,0 +1,11 @@
+# スキル
+- category: 言語
+  items: [Python, C/C++, "C#"]
+- category: 機械学習・画像処理
+  items: [PyTorch, NumPy, OpenCV]
+- category: 3DCG・ゲームエンジン
+  items: [Unreal Engine, Unity, Blender]
+- category: 試作・計測
+  items: [Arduino, Raspberry Pi, Fusion 360, 3Dプリンター, OptiTrack]
+- category: その他
+  items: [Linux, Git/GitHub]

@@ -1,0 +1,15 @@
+# 発表・受賞（新しいものを上に書く）
+# url を書くと題目が論文へのリンクになる（例：url: https://...）
+- title: Evaluating Camera-Augmented Hearables for 3D Human Pose Estimation in Simulation
+  venue: SIGGRAPH Asia 2026
+  detail: ポスター発表（2026年12月予定）
+  awards: []
+  url: ""
+
+- title: カメラ及びIMUセンサ搭載ヒアラブルデバイスを用いた装着者の三次元姿勢推定
+  venue: DICOMO 2026 シンポジウム（情報処理学会）
+  detail: 口頭発表（2026年6月）
+  awards:
+    - 優秀プレゼンテーション賞
+    - 優秀論文賞
+  url: ""

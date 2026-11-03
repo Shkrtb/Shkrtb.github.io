@@ -1,0 +1,10 @@
+baseURL = "https://shkrtb.github.io/"
+locale = "ja"
+defaultContentLanguage = "ja"
+title = "暮坪 秀哉 | ポートフォリオ"
+
+# 1ページ構成のため、使わないページ種別を無効化
+disableKinds = ["taxonomy", "term", "section", "rss"]
+
+[params]
+  description = "暮坪 秀哉（大阪大学大学院 基礎工学研究科 博士前期課程）の研究・発表・スキル・制作物"

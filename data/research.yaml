@@ -1,0 +1,26 @@
+# 研究
+title: 小型カメラとIMUを搭載したイヤホン型端末による、装着者の全身の姿勢推定
+
+summary: >-
+  周囲にカメラを設置せず、イヤホンを装着するだけで全身の姿勢を推定することを目指している。
+  端末に外向きの小型カメラを搭載して腕や脚の位置を計測し、
+  IMU（加速度と角速度を測る装置）のみを用いる先行研究における精度の課題の解決を図る。
+
+tasks:
+  - 端末の試作
+  - 機械学習モデルの設計
+  - Unreal Engine上での合成データの生成基盤の構築
+
+# 図・写真を追加する場所（手順は README.md を参照）
+# 画像ファイルは static/images/research/ に置き、下のように書く。
+# figures:
+#   - src: images/research/device.jpg
+#     alt: 試作したイヤホン型端末
+#     caption: 図1 試作したイヤホン型端末
+figures: []
+
+# 研究の動画を追加する場合は YouTube の動画IDを書く（例：xAmO9aADVv8）
+# videos:
+#   - id: XXXXXXXXXXX
+#     title: 動画のタイトル
+videos: []

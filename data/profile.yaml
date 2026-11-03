@@ -1,0 +1,18 @@
+# プロフィールと連絡先
+name: 暮坪 秀哉
+name_en: Shuya Kuretsubo
+affiliation:
+  - 大阪大学大学院 基礎工学研究科 岩井研究室
+  - 博士前期課程1年（2028年3月修了予定）
+fields:
+  - ウェアラブルデバイス
+  - 姿勢推定
+  - HCI
+  - XR
+links:
+  - label: GitHub
+    text: github.com/Shkrtb
+    url: https://github.com/Shkrtb
+  - label: メール
+    text: kuretsubo.shuya.tef@ecs.osaka-u.ac.jp
+    url: mailto:kuretsubo.shuya.tef@ecs.osaka-u.ac.jp

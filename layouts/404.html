@@ -1,0 +1,7 @@
+{{ define "title" }}ページが見つかりません | {{ site.Title }}{{ end }}
+{{ define "main" }}
+<main class="container notfound">
+  <h1>ページが見つかりません</h1>
+  <p><a href="{{ "/" | relURL }}">トップページへ戻る</a></p>
+</main>
+{{ end }}

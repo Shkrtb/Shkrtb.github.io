@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ site.Params.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ site.Title }}">
+  <meta property="og:description" content="{{ site.Params.description }}">
+  <meta property="og:url" content="{{ site.BaseURL }}">
+  {{- with resources.Get "css/style.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+  {{- end }}
+</head>
+<body>
+  {{ block "main" . }}{{ end }}
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ now.Year }} {{ hugo.Data.profile.name }}（{{ hugo.Data.profile.name_en }}）</p>
+    </div>
+  </footer>
+</body>
+</html>
